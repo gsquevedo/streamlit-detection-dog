@@ -8,6 +8,7 @@ click==8.1.7
 cmake==3.27.2
 contourpy==1.1.0
 cycler==0.11.0
+cv2==4.8.0
 distlib==0.3.7
 filelock==3.12.2
 fonttools==4.42.1
