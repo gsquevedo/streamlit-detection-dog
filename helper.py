@@ -24,51 +24,51 @@ def _display_detected_frames(conf, model, st_frame, image):
                    use_column_width=True
                    )
 
-def play_youtube_video(conf, model):
-    source_youtube = st.sidebar.text_input("YouTube Video url")
-    if st.sidebar.button('Detect Objects'):
-        try:
-            video = pafy.new(source_youtube)
-            best = video.getbest(preftype="mp4")
-            vid_cap = cv2.VideoCapture(best.url)
-            st_frame = st.empty()
-            while (vid_cap.isOpened()):
-                success, image = vid_cap.read()
-                if success:
-                    _display_detected_frames(conf,
-                                             model,
-                                             st_frame,
-                                             image,
-                                             )
-                else:
-                    vid_cap.release()
-                    break
-        except Exception as e:
-            st.sidebar.error("Error loading video: " + str(e))
+# def play_youtube_video(conf, model):
+#     source_youtube = st.sidebar.text_input("YouTube Video url")
+#     if st.sidebar.button('Detect Objects'):
+#         try:
+#             video = pafy.new(source_youtube)
+#             best = video.getbest(preftype="mp4")
+#             vid_cap = cv2.VideoCapture(best.url)
+#             st_frame = st.empty()
+#             while (vid_cap.isOpened()):
+#                 success, image = vid_cap.read()
+#                 if success:
+#                     _display_detected_frames(conf,
+#                                              model,
+#                                              st_frame,
+#                                              image,
+#                                              )
+#                 else:
+#                     vid_cap.release()
+#                     break
+#         except Exception as e:
+#             st.sidebar.error("Error loading video: " + str(e))
 
-def play_stored_video(conf, model):
-    source_vid = st.sidebar.selectbox(
-        "Choose a video...", settings.VIDEOS_DICT.keys())
-    with open(settings.VIDEOS_DICT.get(source_vid), 'rb') as video_file:
-        video_bytes = video_file.read()
+# def play_stored_video(conf, model):
+#     source_vid = st.sidebar.selectbox(
+#         "Choose a video...", settings.VIDEOS_DICT.keys())
+#     with open(settings.VIDEOS_DICT.get(source_vid), 'rb') as video_file:
+#         video_bytes = video_file.read()
     
-    if video_bytes:
-        st.video(video_bytes)
-    if st.sidebar.button('Detect Video Objects'):
-        try:
-            vid_cap = cv2.VideoCapture(
-                str(settings.VIDEOS_DICT.get(source_vid)))
-            st_frame = st.empty()
-            while (vid_cap.isOpened()):
-                success, image = vid_cap.read()
-                if success:
-                    _display_detected_frames(conf,
-                                             model,
-                                             st_frame,
-                                             image,
-                                             )
-                else:
-                    vid_cap.release()
-                    break
-        except Exception as e:
-            st.sidebar.error("Error loading video: " + str(e))
+#     if video_bytes:
+#         st.video(video_bytes)
+#     if st.sidebar.button('Detect Video Objects'):
+#         try:
+#             vid_cap = cv2.VideoCapture(
+#                 str(settings.VIDEOS_DICT.get(source_vid)))
+#             st_frame = st.empty()
+#             while (vid_cap.isOpened()):
+#                 success, image = vid_cap.read()
+#                 if success:
+#                     _display_detected_frames(conf,
+#                                              model,
+#                                              st_frame,
+#                                              image,
+#                                              )
+#                 else:
+#                     vid_cap.release()
+#                     break
+#         except Exception as e:
+#             st.sidebar.error("Error loading video: " + str(e))
