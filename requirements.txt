@@ -39,7 +39,7 @@ nvidia-cusolver-cu11==11.4.0.1
 nvidia-cusparse-cu11==11.7.4.91
 nvidia-nccl-cu11==2.14.3
 nvidia-nvtx-cu11==11.7.91
-opencv-python==4.8.0.76
+opencv-python-headless==4.5.1.48
 packaging==23.1
 pafy==0.5.5
 pandas==2.0.3
