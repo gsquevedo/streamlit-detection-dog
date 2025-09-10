@@ -38,17 +38,27 @@ streamlit-detection-dog/
 ├── assets/ # Imagens ou ícones de exemplo
 └── README.md # Documentação do projeto
 
-## 💻 Como Rodar
+## 🚀 Como Rodar o Projeto
 
 1. Clone o repositório:
-  ```bash
-  git clone https://github.com/gsquevedo/streamlit-detection-dog.git
-  cd streamlit-detection-dog
+   ```bash
+   git clone https://github.com/SEU-USUARIO/streamlit-detection-dog.git
+2. Acesse a pasta do projeto:
+   ```bash
+    cd streamlit-detection-dog
+3. Instale as dependências:
+   ```bash
+    pip install -r requirements.txt
+4. Rode o servidor de desenvolvimento:
+   ```bash
+    streamlit run app.py
+5. Abra o link que aparecer no terminal (geralmente http://localhost:8501) e comece a detectar cachorros!
 
-2. Instale as dependências:
-  ```bash
-  pip install -r requirements.txt
+## 🏷️ Tags
 
-3. Execute o aplicativo:
-  ```bash
-  streamlit run app.py
+Python • Streamlit • Machine Learning • Visão Computacional • Deep Learning • Projeto Pessoal
+
+## 🧑‍💻 Autor
+
+Gabriele Quevedo
+Estudante de Ciência da Computação | UFSM
